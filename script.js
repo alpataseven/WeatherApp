@@ -34,7 +34,7 @@ const displayResult = (result) => {
             image.src = 'Photos/cloud.png';
             break;
 
-        case 'Mist':
+        case 'Fog':
             image.src = 'Photos/mist.png';
             break;
 
@@ -42,20 +42,20 @@ const displayResult = (result) => {
             image.src = '';
     }
 
-    let city = document.querySelector('.weather-box .city')
+    const city = document.querySelector('.weather-box .city')
     city.innerText = `${result.name}, ${result.sys.country}`
 
-    let temp = document.querySelector('.temperature')
+    const temp = document.querySelector('.temperature')
     temp.innerHTML = `${Math.round(result.main.temp)}<span>°C</span>`
 
-    let desc = document.querySelector('.description')
+    const desc = document.querySelector('.description')
     desc.innerText = result.weather[0].description
 
-    let humidity = document.querySelector('.weather-details > .humidity > .text > span');
-    humidity.innerHTML = `${result.main.humidity} %`;
+    const humidity = document.querySelector('.weather-details .humidty .text span');
+    humidity.innerHTML = `${result.main.humidity}%`;
 
-    let wind = document.querySelector('.weather-details > .wind > .text > span');
-    wind.innerText = `${parseInt(result.wind.speed)}Km/h`;
+    const wind = document.querySelector('.weather-details .wind .text span');
+    wind.innerHTML = `${parseInt(result.wind.speed)}Km/h`;
 
 }
 
