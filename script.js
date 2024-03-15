@@ -34,7 +34,7 @@ const displayResult = (result) => {
             image.src = 'Photos/cloud.png';
             break;
 
-        case 'Fog':
+        case 'Mist':
             image.src = 'Photos/mist.png';
             break;
 
@@ -51,11 +51,11 @@ const displayResult = (result) => {
     let desc = document.querySelector('.description')
     desc.innerText = result.weather[0].description
 
-    let humidity = document.querySelector('.weather-details .humidity span');
-    humidity.innerHTML = `${result.main.humidity}Nem: %`;
+    let humidity = document.querySelector('.weather-details > .humidity > .text > span');
+    humidity.innerHTML = `${result.main.humidity} %`;
 
-    let wind = document.querySelector('.weather-details .wind span');
-    wind.innerHTML = `${parseInt(result.wind.speed)}Rüzgar: Km/h`;
+    let wind = document.querySelector('.weather-details > .wind > .text > span');
+    wind.innerText = `${parseInt(result.wind.speed)}Km/h`;
 
 }
 
